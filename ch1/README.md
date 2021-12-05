@@ -15,7 +15,12 @@
     - This makes our task much simpler
 
 ### Dependency and Duplication
+- The code is depending on the tests
+    - we want to add tests without changing the code
+- the answer is: reduce duplication
 
+### TDD is about being able to take a small step
+- Try first! You'll never be able to take a small step if you only take large ones
 
 ## Personal Summary
 - First, you need to have a mind of a client
@@ -27,6 +32,6 @@
     - To pass the test, now then you write your classes and methods
 
 - When we pass all the test, then refactor the code
-    - 
+    - reduce duplication: replace constants with variables
 
 - Test itself works as a documentation
