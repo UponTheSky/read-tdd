@@ -13,4 +13,14 @@
     - however, as we read through the chapters of the book, this requirements above might change
 
 ## Use Unittest Library
-- TBA
+- Basically, we follow [the official docs](https://docs.python.org/3/library/unittest.html)
+
+## Code Documentation
+- The README.md part is for summarizing the book contents
+- The ~.py files are the examples used in the book: this would follow [the Numpy style](https://numpydoc.readthedocs.io/en/latest/format.html)
+- THe test_~.py files are for the test: this would just follow the format of the book
+
+## Linting, Prettier
+- Linting: Possibly Pylint
+    - https://code.visualstudio.com/docs/python/linting#_pylint
+- Prettier: Possibly [black](https://github.com/psf/black)
