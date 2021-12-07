@@ -4,8 +4,11 @@ from multiplication import Dollar
 class TestMultiplication(unittest.TestCase):
     
     def test_multiplication(self):
-        self.assertEqual(Dollar(10), Dollar(5).times(2))
-        self.assertEqual(Dollar(15), Dollar(5).times(3))
+        five = Dollar(5)
+        product_two = five.times(2)
+        product_three = five.times(3)
+        self.assertEqual(10, product_two.amount)
+        self.assertEqual(15, product_three.amount)
 
     def test_equality(self):
         five_first = Dollar(5)

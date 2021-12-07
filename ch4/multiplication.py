@@ -9,10 +9,10 @@ class Dollar:
         -------
         None
         """    
-        self._amount = amount
+        self.amount = amount
 
     def __eq__(self, other):
-        return self._amount == other._amount
+        return self.amount == other.amount
 
     def times(self, multiplier):
         """
