@@ -1,4 +1,4 @@
-# Ch1. Multi-Currency Money
+# Ch2. Degenerate Objects
 
 ## Takeaways
 

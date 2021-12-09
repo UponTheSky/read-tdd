@@ -1,4 +1,4 @@
-# Ch1. Multi-Currency Money
+# Ch4. Privacy for All
 
 ## Takeaways
 

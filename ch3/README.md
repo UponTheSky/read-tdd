@@ -1,4 +1,4 @@
-# Ch1. Multi-Currency Money
+# Ch1. Equality for All
 
 ## Takeaways
 

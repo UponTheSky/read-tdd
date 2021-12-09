@@ -1,4 +1,4 @@
-# Ch1. Multi-Currency Money
+# Ch6. Equality for All, Redux
 
 ## Takeaways
 
