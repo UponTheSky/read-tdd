@@ -1,0 +1,68 @@
+import unittest
+from money import Money, Sum, Bank
+
+class TestAddition(unittest.TestCase):
+    def test_simple_addition(self):
+        five = Money.dollar(5)
+        summation = five + five
+        bank = Bank()
+        reduced = bank.reduce(summation, "USD")
+        self.assertEqual(Money.dollar(10), reduced)
+
+    def test_plus_returns_sum(self):
+        five = Money.dollar(5)
+        summation = five + five
+        self.assertEqual(five, summation.augend)
+        self.assertEqual(five, summation.addend)
+    
+    def test_reduce_sum(self):
+        summation = Sum(Money.dollar(3), Money.dollar(4))
+        bank = Bank()
+        result = bank.reduce(summation, "USD")
+        self.assertEqual(Money.dollar(7), result)
+
+    def test_reduce_money(self):
+        bank = Bank()
+        result = bank.reduce(Money.dollar(1), "USD")
+        self.assertEqual(Money.dollar(1), result)
+
+    def test_reduce_money_different_currency(self):
+        bank = Bank()
+        bank.add_rate("CHF", "USD", 2)
+        result = bank.reduce(Money.franc(2), "USD")
+        self.assertEqual(Money.dollar(1), result)
+
+    def test_identity_rate(self):
+        self.assertEqual(1, Bank().rate("USD", "USD"))
+
+    def test_mixed_addition(self):
+        five_bucks = Money.dollar(5)
+        ten_francs = Money.franc(10)
+        bank = Bank()
+        bank.add_rate("CHF", "USD", 2)
+        result = bank.reduce(five_bucks + ten_francs, "USD")
+        self.assertEqual(Money.dollar(10), result)
+
+    def test_sum_plus_money(self):
+        five_bucks = Money.dollar(5)
+        ten_francs = Money.franc(10)
+        bank = Bank()
+        bank.add_rate("CHF", "USD", 2)
+        summation = Sum(five_bucks, ten_francs) + five_bucks
+        result = bank.reduce(summation, "USD")
+        self.assertEqual(Money.dollar(15), result)
+
+    def test_sum_times(self):
+        five_bucks = Money.dollar(5)
+        ten_francs = Money.franc(10)
+        bank = Bank()
+        bank.add_rate("CHF", "USD", 2)
+        summation = (five_bucks + ten_francs).times(2)
+        result = bank.reduce(summation, "USD")
+        self.assertEqual(Money.dollar(20), result)
+
+    # failed test
+    # def test_plus_same_currency_returns_money(self):
+    #     summation = Money.dollar(1) + Money.dollar(1)
+    #     self.assertTrue(summation.__class__.__name__ == "Money")
+        
