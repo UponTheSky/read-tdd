@@ -1,4 +1,4 @@
-# Ch1. Equality for All
+# Ch3. Equality for All
 
 ## Takeaways
 

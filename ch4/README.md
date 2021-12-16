@@ -1,4 +1,4 @@
-# Ch4. Privacy for All
+# Ch4. Privacy
 
 ## Takeaways
 
